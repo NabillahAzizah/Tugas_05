@@ -1,4 +1,4 @@
-package Tugas)5;
+package pemlan_05;
 
 // Kelas untuk menyimpan informasi pemesanan tiket
 class Pemesanan {
@@ -22,15 +22,18 @@ class Pemesanan {
         System.out.println("Jenis Tiket: " + tiket.getJenis());
         System.out.println("Jumlah Tiket: " + jumlah);
         System.out.printf("Total Harga: Rp.%,.1f",(double) getTotalHarga());
+        //memastikan dibaca sebagai pecahan dengan double dan 1f menjadikan format 1 desimal setelah , (0.0)
     }
 
-
+    //menerapkan operasi diskon untuk tahapan presale selain jenis tiket festival
     private int getTotalHarga() {
         int hargaPerTiket = tiket.getHarga();
         if (tahap.equalsIgnoreCase("Presale") && !(tiket instanceof Festival)) {
             hargaPerTiket *= 0.8;
+            //bentuk dari diskon 20%
         }
 
+        //mengembalikan total harga tiket keseluruhan
         return hargaPerTiket * jumlah;
     }
 }

@@ -1,8 +1,8 @@
 package pemlan_05;
 
-// Kelas abstrak untuk semua jenis tiket
+// Kelas abstrak untuk semua jenis tiket (VIP, VVIP, Festival)
 abstract class Tiket {
-    //Do your magic here
+    //inisialisasi harga agar bisa diakses kelas turunan
     protected int harga;
 
     public Tiket(int harga){
@@ -13,5 +13,6 @@ abstract class Tiket {
         return harga;
     }
 
+    //mengembalikan jenis tiket dengan tujuan implementasinya berbeda tiap kelas turunan
     public abstract String getJenis();
 }
